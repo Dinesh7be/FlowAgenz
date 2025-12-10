@@ -5,6 +5,7 @@ interface CardProps {
   className?: string;
   variant?: 'default' | 'elevated' | 'bordered';
   hover?: boolean;
+  style?: React.CSSProperties;
 }
 
 const variantStyles = {
@@ -18,6 +19,7 @@ export default function Card({
   className,
   variant = 'default',
   hover = false,
+  style,
 }: CardProps) {
   return (
     <div
@@ -27,6 +29,7 @@ export default function Card({
         hover && 'card-hover',
         className
       )}
+      style={style}
     >
       {children}
     </div>
