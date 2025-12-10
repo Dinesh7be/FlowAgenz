@@ -1,0 +1,69 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Blog {
+  id          String   @id @default(cuid())
+  title       String
+  slug        String   @unique
+  content     String   @db.Text
+  excerpt     String
+  tags        String[]
+  publishedAt DateTime
+  coverImage  String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("blogs")
+}
+
+model CaseStudy {
+  id         String   @id @default(cuid())
+  title      String
+  slug       String   @unique
+  client     String
+  challenge  String   @db.Text
+  solution   String   @db.Text
+  techUsed   String[]
+  impact     String[]
+  content    String   @db.Text
+  coverImage String?
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@map("case_studies")
+}
+
+model Product {
+  id        String   @id @default(cuid())
+  name      String
+  slug      String   @unique
+  overview  String   @db.Text
+  features  String[]
+  techUsed  String[]
+  demoUrl   String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("products")
+}
+
+model ContactMessage {
+  id           String   @id @default(cuid())
+  name         String
+  email        String
+  phone        String?
+  company      String?
+  requirements String   @db.Text
+  budget       String?
+  fileUrl      String?
+  createdAt    DateTime @default(now())
+
+  @@map("contact_messages")
+}
+

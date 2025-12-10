@@ -1,0 +1,220 @@
+{
+  "project": {
+    "name": "FlowAgenz",
+    "tagline": "Where Automation Meets Intelligence.",
+    "version": "1.0.0"
+  },
+  "brand": {
+    "colors": {
+      "primary": "#2563EB",
+      "primaryLight": "#3B82F6",
+      "primaryDark": "#1D4ED8",
+      "secondary": "#0F172A",
+      "secondaryLight": "#1E293B",
+      "accent": "#34D399",
+      "accentLight": "#6EE7B7",
+      "background": "#FFFFFF",
+      "backgroundAlt": "#F8FAFC",
+      "text": "#0F172A",
+      "textMuted": "#64748B",
+      "border": "#E2E8F0",
+      "error": "#EF4444",
+      "success": "#22C55E",
+      "warning": "#F59E0B"
+    },
+    "typography": {
+      "fontFamily": {
+        "heading": "Inter, system-ui, sans-serif",
+        "body": "Inter, system-ui, sans-serif",
+        "mono": "JetBrains Mono, monospace"
+      },
+      "fontSize": {
+        "xs": "0.75rem",
+        "sm": "0.875rem",
+        "base": "1rem",
+        "lg": "1.125rem",
+        "xl": "1.25rem",
+        "2xl": "1.5rem",
+        "3xl": "1.875rem",
+        "4xl": "2.25rem",
+        "5xl": "3rem",
+        "6xl": "3.75rem"
+      },
+      "fontWeight": {
+        "normal": 400,
+        "medium": 500,
+        "semibold": 600,
+        "bold": 700
+      },
+      "lineHeight": {
+        "tight": 1.25,
+        "normal": 1.5,
+        "relaxed": 1.75
+      }
+    },
+    "spacing": {
+      "containerMaxWidth": "1280px",
+      "sectionPadding": {
+        "mobile": "3rem",
+        "desktop": "6rem"
+      },
+      "componentGap": {
+        "sm": "1rem",
+        "md": "1.5rem",
+        "lg": "2rem",
+        "xl": "3rem"
+      }
+    },
+    "borderRadius": {
+      "sm": "0.25rem",
+      "md": "0.5rem",
+      "lg": "0.75rem",
+      "xl": "1rem",
+      "full": "9999px"
+    },
+    "shadow": {
+      "sm": "0 1px 2px 0 rgb(0 0 0 / 0.05)",
+      "md": "0 4px 6px -1px rgb(0 0 0 / 0.1)",
+      "lg": "0 10px 15px -3px rgb(0 0 0 / 0.1)",
+      "xl": "0 20px 25px -5px rgb(0 0 0 / 0.1)"
+    }
+  },
+  "components": {
+    "button": {
+      "variants": ["primary", "secondary", "outline", "ghost"],
+      "sizes": ["sm", "md", "lg"],
+      "defaultVariant": "primary",
+      "defaultSize": "md"
+    },
+    "card": {
+      "variants": ["default", "elevated", "bordered"],
+      "defaultVariant": "default"
+    },
+    "input": {
+      "variants": ["default", "filled"],
+      "sizes": ["sm", "md", "lg"],
+      "defaultSize": "md"
+    }
+  },
+  "pages": {
+    "home": {
+      "route": "/",
+      "sections": ["hero", "services", "whyFlowAgenz", "caseStudies", "cta"]
+    },
+    "about": {
+      "route": "/about",
+      "sections": ["whoWeAre", "mission", "expertise", "techStack", "cta"]
+    },
+    "labs": {
+      "route": "/labs",
+      "sections": ["intro", "experimentsGrid", "cta"]
+    },
+    "blogs": {
+      "route": "/blogs",
+      "listRoute": "/blogs",
+      "singleRoute": "/blogs/[slug]",
+      "itemsPerPage": 9
+    },
+    "caseStudies": {
+      "route": "/case-studies",
+      "listRoute": "/case-studies",
+      "singleRoute": "/case-studies/[slug]"
+    },
+    "products": {
+      "route": "/products",
+      "listRoute": "/products",
+      "singleRoute": "/products/[slug]"
+    },
+    "contact": {
+      "route": "/contact"
+    },
+    "privacy": {
+      "route": "/privacy"
+    },
+    "terms": {
+      "route": "/terms"
+    }
+  },
+  "api": {
+    "baseUrl": "/api",
+    "endpoints": {
+      "blogs": {
+        "list": "GET /api/blogs",
+        "single": "GET /api/blogs/:slug"
+      },
+      "caseStudies": {
+        "list": "GET /api/case-studies",
+        "single": "GET /api/case-studies/:slug"
+      },
+      "products": {
+        "list": "GET /api/products",
+        "single": "GET /api/products/:slug"
+      },
+      "contact": {
+        "submit": "POST /api/contact"
+      }
+    },
+    "pagination": {
+      "defaultPage": 1,
+      "defaultLimit": 10,
+      "maxLimit": 50
+    }
+  },
+  "seo": {
+    "defaultTitle": "FlowAgenz | AI Agents & Automation Solutions",
+    "titleTemplate": "%s | FlowAgenz",
+    "defaultDescription": "FlowAgenz builds custom AI systems, advanced automation pipelines and fine-tuned models that handle your operations end-to-end.",
+    "keywords": [
+      "AI Agents",
+      "Workflow Automation",
+      "LLM Fine-tuning",
+      "Make.com",
+      "n8n",
+      "Custom AI Solutions",
+      "Business Automation"
+    ],
+    "openGraph": {
+      "type": "website",
+      "locale": "en_US",
+      "siteName": "FlowAgenz"
+    }
+  },
+  "codeStyle": {
+    "typescript": {
+      "strict": true,
+      "noImplicitAny": true
+    },
+    "imports": {
+      "order": [
+        "react",
+        "next",
+        "third-party",
+        "components",
+        "types",
+        "utils"
+      ],
+      "aliasPrefix": "@"
+    },
+    "naming": {
+      "components": "PascalCase",
+      "functions": "camelCase",
+      "constants": "SCREAMING_SNAKE_CASE",
+      "types": "PascalCase",
+      "files": {
+        "components": "PascalCase",
+        "utilities": "camelCase",
+        "routes": "kebab-case"
+      }
+    }
+  },
+  "contentSource": {
+    "file": "project-plan.md",
+    "rules": [
+      "All page text must come from project-plan.md",
+      "No placeholder lorem ipsum text allowed",
+      "Follow content order exactly as specified",
+      "Maintain all CTA labels from the document"
+    ]
+  }
+}
+
